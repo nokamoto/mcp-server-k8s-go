@@ -1,0 +1,14 @@
+{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+        "name": "kubernetes_list_resources",
+        "arguments": {
+            "version": "v1",
+            "group": "",
+            "resource": "pods",
+            "namespace": "default"
+        }
+    }
+}
