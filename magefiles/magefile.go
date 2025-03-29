@@ -13,7 +13,7 @@ var g0 = sh.RunCmd("go")
 var Default = Build
 
 func Build() error {
-	mg.SerialDeps(Fmt, Import, Tidy, Test)
+	mg.SerialDeps(Fmt, Import, Tidy, Test, Install)
 	return nil
 }
 
@@ -31,4 +31,8 @@ func Tidy() error {
 
 func Test() error {
 	return g0("test", "./...")
+}
+
+func Install() error {
+	return g0("install", "./cmd/mcp-server-k8s-go")
 }
