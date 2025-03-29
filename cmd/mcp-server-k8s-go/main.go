@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"os"
 
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
@@ -35,9 +34,6 @@ func main() {
 func versionHandler(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 	var config *rest.Config
 
-	wd, _ := os.Getwd()
-	debug := fmt.Sprintf("os user=%s, os wd=%s", os.Getenv("USER"), wd)
-
 	kubeconfig := clientcmd.NewNonInteractiveDeferredLoadingClientConfig(
 		clientcmd.NewDefaultClientConfigLoadingRules(),
 		nil,
@@ -45,7 +41,7 @@ func versionHandler(ctx context.Context, request mcp.CallToolRequest) (*mcp.Call
 
 	config, err := kubeconfig.ClientConfig()
 	if err != nil {
-		return nil, fmt.Errorf("failed to get kubeconfig (%s): %v", debug, err)
+		return nil, fmt.Errorf("failed to get kubeconfig: %v", err)
 	}
 
 	clientset, err := kubernetes.NewForConfig(config)
