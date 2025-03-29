@@ -3,6 +3,12 @@ Sample MCP server for Kubernetes, written in Go
 
 ## codespace & cline setup
 
+Run the following command to start minikube.
+
+```bash
+minikube start
+```
+
 Run the following command to build the MCP server:
 
 ```bash
