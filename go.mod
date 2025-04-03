@@ -4,7 +4,7 @@ go 1.24.1
 
 require (
 	github.com/magefile/mage v1.15.0
-	github.com/mark3labs/mcp-go v0.17.0
+	github.com/mark3labs/mcp-go v0.18.0
 	golang.org/x/tools v0.31.0
 	k8s.io/apimachinery v0.32.3
 	k8s.io/client-go v0.32.3
